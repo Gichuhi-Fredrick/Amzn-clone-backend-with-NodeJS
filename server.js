@@ -1,14 +1,14 @@
 const express = require("express");
 const cors = require("cors");
-const client = require("./configs/database");
+// const client = require("./configs/database");
 const user = require("./routes/user");
 
 const port = process.env.PORT || 5000;
 
-//Connect to db
-client.connect((err) => {
-  if (err) console.log(err);
-});
+// //Connect to db
+// client.connect((err) => {
+//   if (err) console.log(err);
+// });
 
 const app = express();
 
