@@ -1,16 +1,18 @@
 const express = require("express");
 const cors = require("cors");
-// const client = require("./configs/database");
 const user = require("./routes/user");
 
 const port = process.env.PORT || 5000;
 
-// //Connect to db
-// client.connect((err) => {
-//   if (err) console.log(err);
-// });
-
 const app = express();
+app.use(function (req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept"
+  );
+  next();
+});
 
 app.use(cors({ origin: true }));
 app.use(express.urlencoded({ extended: false }));
