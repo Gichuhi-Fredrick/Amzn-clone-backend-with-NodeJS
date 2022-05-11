@@ -9,15 +9,6 @@ const { auth } = require("../controllers/auth");
 const { home } = require("../controllers/home");
 
 // Post requests on corresponding methods
-
-router.all(function (req, res, next) {
-  res.header("Access-Control-Allow-Origin", "http://localhost:3000"); // update to match the domain you will make the request from
-  res.header(
-    "Access-Control-Allow-Headers",
-    "Origin, X-Requested-With, Content-Type, Accept"
-  );
-  next();
-});
 router.all(["payment", "orders"], auth);
 router.get("/", home);
 router.post("/register", register);
