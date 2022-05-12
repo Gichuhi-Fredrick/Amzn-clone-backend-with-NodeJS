@@ -15,11 +15,11 @@ const app = express();
 // });
 
 const corsOptions = {
-  origin: "http://localhost:3000",
+  origin: "*",
   optionsSuccessStatus: 200, // For legacy browser support
   methods: "GET, POST",
 };
-app.use(cors({ origin: "http://localhost:3000" }));
+app.use(cors(corsOptions));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
