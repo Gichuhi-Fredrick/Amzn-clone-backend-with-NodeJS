@@ -5,11 +5,8 @@ const connectionString =
 
 const pool = new Pool({
   connectionString: connectionString,
-  user: "postgres",
-  host: "localhost",
-  database: "postgres",
-  password: "GichuhiGit",
-  port: 5432,
+  host: process.env.DATABASE_URL,
+  ssl: true,
 });
 
 module.exports = pool;
