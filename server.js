@@ -19,7 +19,7 @@ const corsOptions = {
   optionsSuccessStatus: 200, // For legacy browser support
   methods: "GET, POST",
 };
-app.use(cors(corsOptions));
+app.use(cors({ origin: "http://localhost:3000" }));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
