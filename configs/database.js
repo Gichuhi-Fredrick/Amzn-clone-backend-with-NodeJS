@@ -4,8 +4,7 @@ const connectionString =
   "postgresql://dbuser:secretpassword@database.server.com:3211/mydb";
 
 const pool = new Pool({
-  connectionString: connectionString,
-  host: process.env.DATABASE_URL,
+  connectionString: process.env.DATABASE_URL,
   ssl: true,
 });
 
